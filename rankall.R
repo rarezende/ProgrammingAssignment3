@@ -3,11 +3,6 @@ rankall <- function(outcome, num = "best") {
     # Read hospital data
     hospData<-read.csv("outcome-of-care-measures.csv", colClasses = "character")
     
-    # Check that input state is valid
-    if(nrow(hospData[hospData$State==state,]) == 0) {
-        stop("invalid state")
-    }
-    
     # Check that input outcome is valid
     if(outcome == "heart attack") {
         outcomeHeader <- "Hospital.30.Day.Death..Mortality..Rates.from.Heart.Attack"
